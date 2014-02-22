@@ -48,3 +48,91 @@ REQUEST_URI=/Proyectos/Inventory/index.php
 in /var/www/Proyectos/Inventory/protected/views/layouts/main.php (51)
 in /var/www/Proyectos/Inventory/protected/views/layouts/column1.php (6)
 in /var/www/Proyectos/Inventory/protected/controllers/SiteController.php (32)
+2014/02/22 22:30:20 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbNavBar" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii/framework/YiiBase.php:322
+Stack trace:
+#0 /var/www/yii/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /var/www/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /var/www/Proyectos/Inventory/protected/views/layouts/main.php(22): CBaseController->widget('bootstrap.widge...', Array)
+#4 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/Proyec...')
+#5 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/Proyec...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(784): CBaseController->renderFile('/var/www/Proyec...', Array, true)
+#7 /var/www/Proyectos/Inventory/protected/controllers/SiteController.php(32): CController->render('index')
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#9 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/Proyectos/Inventory/index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/Proyectos/Inventory/index.php?r=site/index
+HTTP_REFERER=http://localhost/Proyectos/Inventory/index.php?r=site/page&view=about
+---
+2014/02/22 22:34:24 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbNavBar" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii/framework/YiiBase.php:322
+Stack trace:
+#0 /var/www/yii/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /var/www/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /var/www/Proyectos/Inventory/protected/views/layouts/main.php(22): CBaseController->widget('bootstrap.widge...', Array)
+#4 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/Proyec...')
+#5 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/Proyec...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(784): CBaseController->renderFile('/var/www/Proyec...', Array, true)
+#7 /var/www/Proyectos/Inventory/protected/controllers/SiteController.php(32): CController->render('index')
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#9 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/Proyectos/Inventory/index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/Proyectos/Inventory/index.php?r=site/index
+HTTP_REFERER=http://localhost/Proyectos/Inventory/index.php?r=site/page&view=about
+---
+2014/02/22 22:36:10 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbNavBar" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii/framework/YiiBase.php:322
+Stack trace:
+#0 /var/www/yii/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /var/www/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /var/www/Proyectos/Inventory/protected/views/layouts/main.php(22): CBaseController->widget('bootstrap.widge...', Array)
+#4 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/Proyec...')
+#5 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/Proyec...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(784): CBaseController->renderFile('/var/www/Proyec...', Array, true)
+#7 /var/www/Proyectos/Inventory/protected/controllers/SiteController.php(32): CController->render('index')
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#9 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/Proyectos/Inventory/index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/Proyectos/Inventory/index.php?r=site/index
+HTTP_REFERER=http://localhost/Proyectos/Inventory/index.php?r=site/page&view=about
+---
+2014/02/22 22:36:13 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbNavBar" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii/framework/YiiBase.php:322
+Stack trace:
+#0 /var/www/yii/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /var/www/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /var/www/Proyectos/Inventory/protected/views/layouts/main.php(22): CBaseController->widget('bootstrap.widge...', Array)
+#4 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/Proyec...')
+#5 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/Proyec...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(784): CBaseController->renderFile('/var/www/Proyec...', Array, true)
+#7 /var/www/Proyectos/Inventory/protected/controllers/SiteController.php(32): CController->render('index')
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#9 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/Proyectos/Inventory/index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/Proyectos/Inventory/index.php?r=site/index
+HTTP_REFERER=http://localhost/Proyectos/Inventory/index.php?r=site/page&view=about
+---
