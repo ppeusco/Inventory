@@ -15,7 +15,6 @@ class SiteController extends Controller
 			),
 		);
 	}
-
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -76,4 +75,10 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+        
+        public function actionRegister()
+        {
+            $model = new Usuario;
+            $this->render('register', array('model' => $model));
+        }
 }
