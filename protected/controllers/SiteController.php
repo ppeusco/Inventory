@@ -77,8 +77,31 @@ class SiteController extends Controller
 	}
         
         public function actionRegister()
-        {
-            $model = new Usuario;
-            $this->render('register', array('model' => $model));
-        }
+	{
+		$model = new Usuario;
+
+		if (isset($_POST['Usuario']))
+		{
+			$model->attributes = $_POST['Usuario'];
+			$cleanPassword = $model->password;
+			$model->password = MD5($model->password);
+			if($model->save())
+			{
+				$loginForm = new LoginForm;
+				$loginForm->username = $model->nick;
+				$loginForm->password = $cleanPassword;
+
+				if ($loginForm->login())
+				{
+					$this->redirect(array('index'));
+				}
+			}
+			else
+			{
+				Yii::app()->user->setFlash('error', 'No se pudo registrar el usuario');
+			}
+		}
+
+		$this->render('register', array('model'=>$model,));
+	}
 }

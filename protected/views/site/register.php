@@ -10,6 +10,11 @@ $this->breadcrumbs=array(
 ?>
 
 <h1>Register</h1>
+<?php if (Yii::app()->user->hasFlash('error')): ?>
+	<div class="alert">
+		<?php echo Yii::app()->user->getFlash('error'); ?>
+	</div>
+<?php endif ?>
 
 <?php if (Yii::app()->user->hasFlash('error')): ?>
 	<div class="alert">
