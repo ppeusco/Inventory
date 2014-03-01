@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="form-horizontal well">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'almacen-form',
@@ -15,24 +15,26 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'descripcion', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'descripcion', array('size' => 50, 'maxlength' => 50,)); ?>
+            <?php echo $form->error($model, 'descripcion'); ?>
+        </div>
+    </div>
 
-	<?php echo $form->errorSummary($model); ?>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'capacidad', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'capacidad'); ?>
+            <?php echo $form->error($model, 'capacidad'); ?>
+        </div>
+    </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'descripcion'); ?>
-		<?php echo $form->textField($model,'descripcion',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'descripcion'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'capacidad'); ?>
-		<?php echo $form->textField($model,'capacidad'); ?>
-		<?php echo $form->error($model,'capacidad'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<div class="control-group">
+            <div class="controls">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-primary')); ?>
+            </div>  
 	</div>
 
 <?php $this->endWidget(); ?>

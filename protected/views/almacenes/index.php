@@ -3,18 +3,52 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Almacens',
+	'Almacenes',
 );
 
-$this->menu=array(
-	array('label'=>'Create Almacen', 'url'=>array('create')),
-	array('label'=>'Manage Almacen', 'url'=>array('admin')),
-);
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#almacen-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
+
 ?>
 
-<h1>Almacens</h1>
+<h1>Almacenes</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<div class="search-form" style="display:none">
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
 )); ?>
+</div><!-- search-form -->
+
+<div class="pull-right">
+    <?php $this->widget('bootstrap.widgets.TbButton', array(
+        'type'=>'primary',
+        'label'=>'Add new',
+        'url'=>array('create'),
+    )); ?>
+</div>
+
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
+	'id'=>'almacen-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'columns'=>array(
+		'id',
+		'descripcion',
+		'capacidad',
+		array(
+			'class'=>'CButtonColumn',
+		),
+	),
+)); ?>
+

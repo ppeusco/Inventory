@@ -18,6 +18,9 @@
                     'class' => 'bootstrap.widgets.TbMenu',
                     'items' => array(
                         array('label' => 'Home', 'url' => array('/site/index')),
+                        array('label' => 'Almacenes', 'url' => array('/almacenes/index'), 'visible' => !Yii::app()->user->isGuest),
+                        array('label' => 'Categorias', 'url' => array('/categorias/index'), 'visible' => !Yii::app()->user->isGuest),
+                        array('label' => 'Productos', 'url' => array('/productos/index'), 'visible' => !Yii::app()->user->isGuest),
                         array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
                         array('label' => 'Register', 'url' => array('/site/register'), 'visible' => Yii::app()->user->isGuest),
                         array('label' => 'Change password', 'url' => array('/site/change'), 'visible' => !Yii::app()->user->isGuest),
