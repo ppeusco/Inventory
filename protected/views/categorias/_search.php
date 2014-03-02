@@ -4,27 +4,36 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="wide form">
+<div class="form-horizontal well">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
-)); ?>
+    <?php
+    $form = $this->beginWidget('CActiveForm', array(
+        'action' => Yii::app()->createUrl($this->route),
+        'method' => 'get',
+    ));
+    ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'id', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'id'); ?>
+            <?php echo $form->error($model, 'id'); ?>    
+        </div>
+    </div>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'descripcion', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'descripcion', array('size' => 50, 'maxlength' => 50)); ?>
+            <?php echo $form->error($model, 'descripcion'); ?>    
+        </div>
+    </div>
+
+    <div class="control-group">
+            <div class="controls">
+		<?php echo CHtml::submitButton('Search',array('class'=>'btn btn-primary')); ?>
+            </div>    
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'descripcion'); ?>
-		<?php echo $form->textField($model,'descripcion',array('size'=>50,'maxlength'=>50)); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
+    <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->
