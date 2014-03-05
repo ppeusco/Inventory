@@ -4,42 +4,62 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="wide form">
+<div class="form-horizontal well">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
-)); ?>
+    <?php
+    $form = $this->beginWidget('CActiveForm', array(
+        'action' => Yii::app()->createUrl($this->route),
+        'method' => 'get',
+    ));
+    ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'id', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'id'); ?>
+            <?php echo $form->error($model, 'id'); ?>
+        </div>
+    </div>
 
-	<div class="row">
-		<?php echo $form->label($model,'codigo'); ?>
-		<?php echo $form->textField($model,'codigo',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'codigo', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'codigo', array('size' => 20, 'maxlength' => 20)); ?>
+            <?php echo $form->error($model, 'codigo'); ?>
+        </div>
+    </div>
 
-	<div class="row">
-		<?php echo $form->label($model,'nombre'); ?>
-		<?php echo $form->textField($model,'nombre',array('size'=>60,'maxlength'=>255)); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'descripcion'); ?>
-		<?php echo $form->textArea($model,'descripcion',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'nombre', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'nombre', array('size' => 60, 'maxlength' => 255)); ?>
+            <?php echo $form->error($model, 'nombre'); ?>
+        </div>
+    </div>
 
-	<div class="row">
-		<?php echo $form->label($model,'categoria_id'); ?>
-		<?php echo $form->textField($model,'categoria_id'); ?>
-	</div>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'descripcion', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textArea($model, 'descripcion', array('rows' => 6, 'cols' => 50)); ?>
+            <?php echo $form->error($model, 'descripcion'); ?>
+        </div>
+    </div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'categoria_id', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'categoria_id'); ?>
+            <?php echo $form->error($model, 'categoria_id'); ?>
+        </div>
+    </div>
 
-<?php $this->endWidget(); ?>
+    <div class="control-group">
+        <div class="controls">
+            <?php echo CHtml::submitButton('Search', array('class' => 'btn')); ?>
+        </div>    
+    </div>
+
+    <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->

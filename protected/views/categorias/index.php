@@ -29,6 +29,15 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
+<div class="pull-right">
+    <?php $this->widget('bootstrap.widgets.TbButton', array(
+        'type'=>'primary',
+        'label'=>'Add new',
+        'url'=>array('create'),
+    )); ?>
+</div>
+
+
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'categoria-grid',
 	'dataProvider'=>$model->search(),
@@ -37,7 +46,7 @@ $('.search-form form').submit(function(){
 		'id',
 		'descripcion',
 		array(
-			'class'=>'CButtonColumn',
+			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
 	),
 )); ?>

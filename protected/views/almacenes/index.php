@@ -47,7 +47,7 @@ $('.search-form form').submit(function(){
 		'descripcion',
 		'capacidad',
 		array(
-			'class'=>'CButtonColumn',
+			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
 	),
 )); ?>
