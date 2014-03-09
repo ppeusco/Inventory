@@ -109,4 +109,11 @@ class Producto extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+       
+        public static function toList()
+	{
+		$model = self::model()->findAll();
+		return CHtml::listData($model, 'id', 'descripcion');
+	}
 }
