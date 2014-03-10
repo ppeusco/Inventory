@@ -74,7 +74,8 @@ return array(
 			),
 		),
             'bootstrap'=>array(
-                'class' =>'ext.bootstrap.components.Bootstrap'
+                'class' =>'ext.bootstrap.components.Bootstrap',
+                'responsiveCss' => true
             ),
 	),
 
